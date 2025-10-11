@@ -1,0 +1,14 @@
+<div class="container">
+  <div *ngIf="post" class="post-detail">
+    <h1>{{ post.title }}</h1>
+    <p class="post-meta">by {{ post.firstName }} {{ post.lastName }} ; on {{ post.dateCreated | date:'medium' }}</p>
+    <div class="post-body">
+      <p>{{ post.body }}</p>
+    </div>
+    <a routerLink="/" class="back-link">← Back to all posts</a>
+  </div>
+
+  <div *ngIf="!post" class="loading">
+    <p>Loading post...</p>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>All Blog Posts</h1>
+  
+  <div *ngFor="let post of posts" class="post-item">
+    <h3><a [routerLink]="['/posts', post.id]">{{ post.title }}</a></h3>
+    <p class="post-meta">by {{ post.firstName }} {{ post.lastName }} ; on {{ post.dateCreated | date:'medium' }}</p>
+  </div>
+
+  <div *ngIf="!posts || posts.length === 0" class="no-posts">
+    <p>No posts available. Please check if your backend is running.</p>
+  </div>
+</div>
